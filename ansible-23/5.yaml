@@ -1,0 +1,18 @@
+---
+-
+  hosts: node
+  user: ansible
+  become: true
+  tasks:
+    - name: Set a fact
+      set_fact:
+        our_fact: Ansible_Set_Facts sample !
+        ansible_distribution: "{{ ansible_distribution | lower }}"
+
+    - name: Show our_fact
+      debug:
+        msg: "{{ our_fact }}"
+
+    - name: Show ansible_distribution
+      debug:
+        msg: "{{ ansible_distribution }}"

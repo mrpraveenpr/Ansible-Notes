@@ -1,0 +1,12 @@
+---
+- name: Demo variables
+  vars:
+    name: hippo
+  hosts: node-u
+  tasks:
+    - name: print variable value
+      debug:
+        var: name
+    - name: print  variable with sone line
+      debug:
+        msg: "Hello, {{ name }}"
